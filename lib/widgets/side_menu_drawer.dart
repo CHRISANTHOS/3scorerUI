@@ -7,6 +7,7 @@ import 'package:scorer_uchenna/pages/login_page.dart';
 import 'package:scorer_uchenna/view_model/auth_display_view_model.dart';
 import 'package:provider/provider.dart';
 import 'package:scorer_uchenna/pages/view_profile_page.dart';
+import 'package:scorer_uchenna/utils/show_snackbar.dart';
 
 class SideMenuDrawer extends StatelessWidget {
 
@@ -26,6 +27,7 @@ class SideMenuDrawer extends StatelessWidget {
         customButton(text: 'Log out', onTap: (){
           vm.loggedIn = false;
           nextPage(SoccerHome(), context);
+          showSnackBar(context, 'Logged Out Successfully');
         }, icon: Icons.login, bgColor: const Color(0xFF008F8F), alignT: false)
       ],
     );

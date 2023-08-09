@@ -29,6 +29,7 @@ class WebServices {
 
     http.Response response = await http.post(Uri.parse(signUpURL!),
         body: jsonEncode(data.signUpToJson()), headers: headers);
+    print(response.body);
     if (response.statusCode == 201) {
       Map<String, dynamic> json = jsonDecode(response.body);
       return AuthModel.signUpJson(json);
